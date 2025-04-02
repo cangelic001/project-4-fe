@@ -13,22 +13,15 @@ import EntryForm from "./components/EntryForm/EntryForm";
 import { UserContext } from "./contexts/UserContext";
 import * as entryService from "./services/entryService";
 
-// CSS related
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
-
-// Logo on tab
-import sushiLogo from './assets/sushi.svg';
-const link = document.querySelector("link[rel='icon']") || document.createElement('link');
-link.rel = 'icon';
-link.type = 'image/svg+xml';
-link.href = sushiLogo;  
-document.head.appendChild(link);
 
 const App = () => {
   const { user } = useContext(UserContext);
   const [entries, setEntries] = useState([]);
   const navigate = useNavigate();
+
+  console.log("Entries in App.jsx:", entries);
 
   useEffect(() => {
     const fetchUserEntries = async () => {
@@ -60,10 +53,10 @@ const App = () => {
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={user ? <Dashboard /> : <Landing />} />
+        <Route path="/" element={user ? <Dashboard entries={entries} /> : <Landing />} />
         {user ? (
           <>
-            {/* Protected routes (available only to signed-in users) */}
+            {/* Protected routes*/}
             <Route path="/entries" element={<EntryList entries={entries} />} />
             <Route
               path="/entries/:entryId"
@@ -80,7 +73,7 @@ const App = () => {
           </>
         ) : (
           <>
-            {/* Non-user routes (available only to guests) */}
+            {/* Non-user routes*/}
             <Route path="/sign-up" element={<SignUpForm />} />
             <Route path="/sign-in" element={<SignInForm />} />
           </>

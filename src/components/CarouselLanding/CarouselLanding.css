@@ -12,11 +12,11 @@
 }
 
 .carousel-box {
-  background-color: #fff1cd;
+  background-color: #f0f0f0;
   padding: 30px;
   border-radius: 25px;
   max-width: 800px;
-  height: 410px;
+  height: 500px;
   box-sizing: border-box;
   overflow: hidden;
   position: relative;

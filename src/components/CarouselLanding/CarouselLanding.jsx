@@ -8,15 +8,15 @@ function CarouselLanding() {
 
     const textData = [
         {
-          text: "Jot down your thoughts",
+          text: "Every Bug Fixed is a Student’s Confidence Gained—Keep Inspiring!",
           image: Createpic
         },
         {
-          text: "Reflect on your journey",
+          text: "You’re Not Just Teaching Code, You’re Shaping Problem-Solvers!",
           image: Viewpic
         },
         {
-          text: "Chart your vibes",
+          text: "From Hello World to Full-Stack Mastery—Your Guidance Makes It Possible!",
           image: Chartpic
         }
       ];
@@ -27,7 +27,7 @@ function CarouselLanding() {
                 {textData.map((info, index) => (
                     <Carousel.Item key={index}>
                         <div className="carousel-box">
-                            <h4 style={{ color: "#ff94a6" }} className="fw-bold">{info.text}</h4>
+                            <h5 className="fw-bold cobalt">{info.text}</h5>
                             <img src={info.image} alt={info.text} className="carousel-image" />
                         </div>
                     </Carousel.Item>

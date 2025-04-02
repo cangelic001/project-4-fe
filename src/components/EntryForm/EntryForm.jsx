@@ -63,8 +63,8 @@ const EntryForm = (props) => {
     <main className="entry-form-container">
       <div className="entry-form-wrapper">
 
-        <div className="journal-prompts">
-          <h2 className="salmon-text">Performance Review</h2>
+        <div className="prompts">
+          <h5>Performance Review</h5>
           <ul>
             {performancePrompts.map((prompt, index) => (
               <li key={index}>{prompt}</li>
@@ -72,24 +72,24 @@ const EntryForm = (props) => {
           </ul>
         </div>
 
-        <div className="journal-prompts">
-          <h2 className="salmon-text">Recommendation</h2>
+        <div className="prompts">
+          <h5>Recommendation</h5>
           <ul>
             {recommendationPrompts.map((prompt, index) => (
               <li key={index}>{prompt}</li>
             ))}
           </ul>
         </div>
-
+      
         <div className="entry-form">
-            <h1 className="mentai-text">{entryId ? "Edit Entry" : "New Entry"}</h1>
+            <h1>{entryId ? "Edit Entry" : "New Entry"}</h1>
             
             {formData.createdAt ? (
-              <p className="salmon-text">
+              <p>
                 {`Posted on ${new Date(formData.createdAt).toLocaleDateString()}`}
               </p>
             ) : (
-              <p className="salmon-text">Date of Lesson: Loading...</p> 
+              <p>Date: Loading...</p> 
             )}
 
             <form onSubmit={handleSubmit}>
@@ -117,9 +117,10 @@ const EntryForm = (props) => {
                     />
                 </div>
 
-                <button type="submit" className="btn-submit fw-bold">Submit Entry</button>
+                <button type="submit" className="btn-submit fw-bold">Submit</button>
             </form>
         </div>
+
 
       </div>
     </main>

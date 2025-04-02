@@ -10,17 +10,19 @@ const Landing = () => {
     
         <div className="mt-3 text-center" style={{display: 'flex', flexDirection: 'column', gap: '5px', justifyContent: 'center', alignItems: 'center'}}>
           <h1 className="fw-bold mb-1"> 
-            <span className="fw-bold mentai-text display-3">Mentai</span> 
-            <span className="fw-bold nori-text display-3">-</span>  
-            <span className="fw-bold salmon-text display-3">Log</span>
+            <span className="fw-bold cobalt">CodeBrew.io</span>
           </h1>
+          <h4 className="fw-bold mb-1"> 
+            <span className="fw-bold cobalt">Tutor Platform</span>
+          </h4>
+          <span>Brewing tomorrow's tech talent, today.</span>
           
-          <h6 className="" style={{ color: "#fcdb7f" }}>Your thoughts deserve a home — start journalling today! <br />Capture your dreams, untangle your emotions, and discover the power of your own voice</h6>
+          <h6 className="" style={{ color: "gray" }}></h6>
           
           <div className="mt-1" style={{ display: 'flex', flexDirection: 'column', gap: '5px', justifyContent: 'center', alignItems: 'center'}}>
-            <Button variant="warning" className="mt-1 w-90 fw-bold text-white">
+            <Button className="mt-1 w-90 fw-bold text-white">
                 <Link to="/sign-up" style={{ textDecoration: 'none', color: 'inherit' }}>
-                    New? Start Logging Now
+                    New Tutor? Sign Up
                 </Link>
             </Button>
           </div>

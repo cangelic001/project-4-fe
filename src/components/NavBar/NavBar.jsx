@@ -1,9 +1,8 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router";
-import sushiLogo from '../../assets/sushi.svg';
+import cupLogo from '../../assets/coffee-cup.png';
 import './NavBar.css';
 
-// React bootstrap imports
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -31,15 +30,14 @@ const NavBar = () => {
             <Navbar.Brand href="/">
               <img
                 alt=""
-                src={sushiLogo}
+                src={cupLogo}
                 width="40"
                 height="40"
                 className="d-inline-block align-top"
               />{' '}
               <span className="fw-bold">
-                <span className="mentai-text">Mentai</span> 
-                <span className="nori-text">-</span>  
-                <span className="salmon-text">Log</span>
+                <span className="cobalt">CodeBrew.io</span> 
+                <span style={{color: "gray"}}> Tutor Platform</span>
               </span>
             </Navbar.Brand>
 
@@ -47,8 +45,8 @@ const NavBar = () => {
                 {user ? (
                     <>
                       <Nav.Link as={Link} to="/" onClick={handleLinkClick}>Home</Nav.Link>
-                      <Nav.Link as={Link} to="/entries" onClick={handleLinkClick}>View Entries</Nav.Link>
-                      <Nav.Link as={Link} to="/entries/new" onClick={handleLinkClick}>Create an Entry</Nav.Link>
+                      <Nav.Link as={Link} to="/entries" onClick={handleLinkClick}>Entries</Nav.Link>
+                      <Nav.Link as={Link} to="/entries/new" onClick={handleLinkClick}>New Entry</Nav.Link>
                       <Nav.Link as={Link} to="/" onClick={() => { handleLinkClick(); handleSignOut(); }}>
                         Sign Out
                       </Nav.Link>
@@ -62,7 +60,7 @@ const NavBar = () => {
                 )}
                 </Nav>
             
-            <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={() => setShow(true)} />
+            <Navbar.Toggle aria-controls="offcanvasNavbar" className="offcanvasToggle" onClick={() => setShow(true)} />
             
             <Navbar.Offcanvas
               id="offcanvasNavbar"
@@ -72,18 +70,10 @@ const NavBar = () => {
               onHide={() => setShow(false)}
             >
               <Offcanvas.Header closeButton>
-                <img
-                  alt=""
-                  src={sushiLogo}
-                  width="30"
-                  height="30"
-                  className="d-inline-block align-top mr-3"
-                />
+
                 <Offcanvas.Title id="offcanvasNavbarLabel">
                   <span className="fw-bold">
-                    <span className="mentai-text">Mentai</span> 
-                    <span className="nori-text">-</span>  
-                    <span className="salmon-text">Log</span>
+                    <span className="cobalt">CodeBrew.io</span>
                   </span>
                 </Offcanvas.Title>
               </Offcanvas.Header>
@@ -93,8 +83,8 @@ const NavBar = () => {
                 {user ? (
                     <>
                       <Nav.Link as={Link} to="/" onClick={handleLinkClick}>Home</Nav.Link>
-                      <Nav.Link as={Link} to="/logs" onClick={handleLinkClick}>View Logs</Nav.Link>
-                      <Nav.Link as={Link} to="/logs/new" onClick={handleLinkClick}>Create a New Log</Nav.Link>
+                      <Nav.Link as={Link} to="/logs" onClick={handleLinkClick}>Entries</Nav.Link>
+                      <Nav.Link as={Link} to="/logs/new" onClick={handleLinkClick}>New Entry</Nav.Link>
                       <Nav.Link as={Link} to="/" onClick={() => { handleLinkClick(); handleSignOut(); }}>
                         Sign Out
                       </Nav.Link>

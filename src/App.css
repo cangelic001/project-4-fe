@@ -2,14 +2,8 @@ body {
     font-family: 'Lexend', sans-serif;
   }
 
-.mentai-text {
-    color: #ffa50a;
-}
-
-.salmon-text {
-    color: #ff94a6;
-}
-
-.nori-text {
-    color: #005d3b;
+.cobalt {
+    background: linear-gradient(to right, #2d7aff, #00d8d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
