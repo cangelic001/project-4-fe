@@ -1,0 +1,106 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 20px;
+}
+
+section {
+    background-color: #ffeced;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    animation: fadeInUp 0.5s ease;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 1em;
+    color: #ffa50a;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.edit-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    background-color: #ff94a6;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #ffa8b7;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px !important;
+    background-color: #ff4d4d;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff7878;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    background-color: #ffa50a;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #ffbf50;
+}
+
+/* Animation */
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}

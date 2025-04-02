@@ -1,0 +1,17 @@
+.custom-navbar {
+    background-color: #feeab3;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  }
+
+.nav-link {
+    padding: 8px 16px !important;
+    border-radius: 10px !important;
+    transition: background-color 0.2s ease !important; 
+    color: #ffa50a !important;
+}
+
+.nav-link:hover {
+    background-color: #fff2cf !important; 
+    color: #ff94a6 !important;
+    border-radius: 8px;
+}
