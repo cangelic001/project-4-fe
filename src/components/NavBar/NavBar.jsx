@@ -47,8 +47,8 @@ const NavBar = () => {
                 {user ? (
                     <>
                       <Nav.Link as={Link} to="/" onClick={handleLinkClick}>Home</Nav.Link>
-                      <Nav.Link as={Link} to="/logs" onClick={handleLinkClick}>View Logs</Nav.Link>
-                      <Nav.Link as={Link} to="/logs/new" onClick={handleLinkClick}>Create a New Log</Nav.Link>
+                      <Nav.Link as={Link} to="/entries" onClick={handleLinkClick}>View Entries</Nav.Link>
+                      <Nav.Link as={Link} to="/entries/new" onClick={handleLinkClick}>Create an Entry</Nav.Link>
                       <Nav.Link as={Link} to="/" onClick={() => { handleLinkClick(); handleSignOut(); }}>
                         Sign Out
                       </Nav.Link>

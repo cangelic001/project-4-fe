@@ -9,15 +9,17 @@
     }
 }
 
-.log-form-container {
+.entry-form-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 70vh; 
     background-color: #ffffff; 
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
-.log-form-wrapper {
+.entry-form-wrapper {
     display: flex;
     justify-content: space-between;
     gap: 30px;  
@@ -25,7 +27,7 @@
     align-items: center; 
 }
 
-.log-form {
+.entry-form {
     background-color: #feeec0;
     padding: 30px;
     border-radius: 25px; 
@@ -52,6 +54,7 @@
     overflow-y: auto; 
     justify-content: center;
     border: 25px solid #fff8e2;
+    margin-bottom: 20px;
 }
 
 .journal-prompts ul {
