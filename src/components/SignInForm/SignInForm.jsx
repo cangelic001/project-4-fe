@@ -2,8 +2,9 @@ import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router';
 import { signIn } from '../../services/authService';
 import { UserContext } from '../../contexts/UserContext';
-import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
+import { Form, Button, Alert } from 'react-bootstrap';
 import LoadingSpinner from './Spinner';
+import './SignInForm.css';
 
 const SignInForm = () => {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ const SignInForm = () => {
     username: '',
     password: '',
   });
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
   const [isSigningIn, setIsSigningIn] = useState(false);
 
   const handleChange = (evt) => {
@@ -38,54 +39,52 @@ const SignInForm = () => {
   };
 
   return (
-    <Container className="mt-5">
-    <Row className="justify-content-center">
-        <Col md={6}>
-            <h1 className="text-center mb-4 mentai-text">Sign In</h1>
-            {message && <Alert variant="info">{message}</Alert>}
-            <Form autoComplete="off" onSubmit={handleSubmit}>
-                <Form.Group controlId="username" className="mb-3 nori-text">
-                    <Form.Label>Username:</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Enter your username"
-                        value={formData.username}
-                        name="username"
-                        onChange={handleChange}
-                        required
-                    />
-                </Form.Group>
+    <div className="signin-container">
+      <div className="signin-box">
+        <h1 className="text-center mb-4">Sign In</h1>
+        {message && <Alert variant="info">{message}</Alert>}
+        <Form autoComplete="off" onSubmit={handleSubmit}>
+          <Form.Group controlId="username" className="mb-3">
+            <Form.Label>Username:</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter your username"
+              value={formData.username}
+              name="username"
+              onChange={handleChange}
+              required
+            />
+          </Form.Group>
 
-                <Form.Group controlId="password" className="mb-4 nori-text">
-                    <Form.Label>Password:</Form.Label>
-                    <Form.Control
-                        type="password"
-                        placeholder="Enter your password"
-                        value={formData.password}
-                        name="password"
-                        onChange={handleChange}
-                        required
-                    />
-                </Form.Group>
+          <Form.Group controlId="password" className="mb-4">
+            <Form.Label>Password:</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Enter your password"
+              value={formData.password}
+              name="password"
+              onChange={handleChange}
+              required
+            />
+          </Form.Group>
 
-                {isSigningIn && (
-                  <div className="text-center">
-                    <LoadingSpinner />
-                  </div>
-                )}
+          {isSigningIn && (
+            <div className="spinner-container">
+              <LoadingSpinner />
+            </div>
+          )}
 
-                <div className="d-flex justify-content-between">
-                    <Button className="text-white" variant="warning" type="submit" disabled={loading}>
-                      {isSigningIn ? 'Signing In...' : 'Sign In'}
-                    </Button>
-                    <Button variant="outline-warning" onClick={() => navigate('/')} disabled={loading}>
-                        Cancel
-                    </Button>
-                </div>
-            </Form>
-        </Col>
-    </Row>
-</Container>
+          <div className="d-flex justify-content-between">
+            <Button className="text-white" variant="primary" type="submit" disabled={loading}>
+              {isSigningIn ? 'Signing In...' : 'Sign In'}
+            </Button>
+            <Button variant="outline-primary" onClick={() => navigate('/')} disabled={loading}>
+              Cancel
+            </Button>
+          </div>
+        </Form>
+      </div>
+    </div>
   );
 };
 

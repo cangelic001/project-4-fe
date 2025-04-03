@@ -22,11 +22,10 @@ const List = (props) => {
 
   return (
     <>
-      <h1>Entries</h1>
-      <h4 className="title">Entries in chronological order</h4>
+      <h1 className="mt-5">Entries</h1>
       <div className="list-container">
         <aside className="left-box">
-          <h3>Filter by Student</h3>
+          <h5 className="m-2">Filter by Student</h5>
           {studentNames.length === 0 ? (
             <p>No students available</p>
           ) : (

@@ -28,7 +28,6 @@ function CarouselLanding() {
                     <Carousel.Item key={index}>
                         <div className="carousel-box">
                             <h5 className="fw-bold cobalt">{info.text}</h5>
-                            <img src={info.image} alt={info.text} className="carousel-image" />
                         </div>
                     </Carousel.Item>
                 ))}

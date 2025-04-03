@@ -25,7 +25,7 @@ const NavBar = () => {
 
   return (
     <>
-      <Navbar sticky="top" expand={false} className=" mb-5 custom-navbar" >
+      <Navbar sticky="top" expand={false} className="custom-navbar" >
           <Container fluid>
             <Navbar.Brand href="/">
               <img
@@ -36,7 +36,7 @@ const NavBar = () => {
                 className="d-inline-block align-top"
               />{' '}
               <span className="fw-bold">
-                <span className="cobalt">CodeBrew.io</span> 
+                <span className="cobalt">CodeBrew.edu</span> 
                 <span style={{color: "gray"}}> Tutor Platform</span>
               </span>
             </Navbar.Brand>
@@ -73,7 +73,7 @@ const NavBar = () => {
 
                 <Offcanvas.Title id="offcanvasNavbarLabel">
                   <span className="fw-bold">
-                    <span className="cobalt">CodeBrew.io</span>
+                    <span className="cobalt">CodeBrew.edu</span>
                   </span>
                 </Offcanvas.Title>
               </Offcanvas.Header>

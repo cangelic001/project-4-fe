@@ -1,42 +1,40 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import CarouselLanding from "../CarouselLanding/CarouselLanding";
-import { Container } from "react-bootstrap";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
+import "./Landing.css";
+import cupPhoto from "../../assets/coffee-cup-blue-background.jpg"
 
 const Landing = () => {
   return (
-    <div>
-      <Container>
-    
-        <div className="mt-3 text-center" style={{display: 'flex', flexDirection: 'column', gap: '5px', justifyContent: 'center', alignItems: 'center'}}>
-          <h1 className="fw-bold mb-1"> 
-            <span className="fw-bold cobalt">CodeBrew.io</span>
-          </h1>
-          <h4 className="fw-bold mb-1"> 
-            <span className="fw-bold cobalt">Tutor Platform</span>
-          </h4>
-          <span>Brewing tomorrow's tech talent, today.</span>
-          
-          <h6 className="" style={{ color: "gray" }}></h6>
-          
-          <div className="mt-1" style={{ display: 'flex', flexDirection: 'column', gap: '5px', justifyContent: 'center', alignItems: 'center'}}>
-            <Button className="mt-1 w-90 fw-bold text-white">
-                <Link to="/sign-up" style={{ textDecoration: 'none', color: 'inherit' }}>
-                    New Tutor? Sign Up
-                </Link>
-            </Button>
-          </div>
+    <div className="landing-container">
+      <img src={cupPhoto} alt="Landing" className="landing-image" />
+      
+      <div className="landing-content">
 
-          <CarouselLanding />
+        <h1 className="fw-bold mb-1"> 
+          <span className="fw-bold cobalt">CodeBrew.edu</span>
+        </h1>
 
+        <h4 className="fw-bold mb-1"> 
+          <span className="fw-bold cobalt">Tutor Platform</span>
+        </h4>
+        
+        <h6 className="" style={{ color: "gray" }}>Brewing tomorrow's tech talent, today.</h6>
+        
+        <div className="mt-1" style={{ display: 'flex', flexDirection: 'column', gap: '5px', justifyContent: 'center', alignItems: 'center'}}>
+          <Button className="landing-button mt-1 text-white">
+            <Link to="/sign-up">New Tutor? Sign Up</Link>
+          </Button>
         </div>
 
-      </ Container>
+        <CarouselLanding className="carou-container"/>
+      </div>
     </div>
   );
 };
 
 export default Landing;
+
 
 
 

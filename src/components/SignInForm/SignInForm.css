@@ -1,0 +1,60 @@
+.signin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('../../assets/gradient.jpg') center/cover no-repeat;
+  }
+  
+  .signin-box {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 0.25s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .signin-box h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .signin-box .form-control {
+    margin-bottom: 15px;
+  }
+  
+  .signin-box .d-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .signin-box .btn {
+    width: 48%;
+    font-weight: bold;
+  }
+  
+  .signin-box .btn-info {
+    margin-top: 10px;
+  }
+  
+  .signin-box .spinner-container {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  
