@@ -11,7 +11,7 @@ const LoadingSpinner = () => {
         className="custom-spinner"
         style={{ borderRightColor: 'transparent'}}
       />
-      <div className="spinner-text">Loading dashboard...</div>
+      <div className="spinner-text">Brewing Dashboard...</div>
     </div>
   );
 };

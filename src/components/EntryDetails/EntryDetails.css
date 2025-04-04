@@ -1,30 +1,24 @@
 @keyframes button-click {
     0% {
-        transform: scale(1);
+      transform: scale(1);
     }
     50% {
-        transform: scale(1.1);
+      transform: scale(1.1);
     }
     100% {
-        transform: scale(1);
+      transform: scale(1);
     }
-}
-
-.edit-btn:active,
-.back-btn:active,
-button:active {
-    animation: button-click 0.15s ease;
-}
-
-main {
+  }
+  
+  main {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 70vh;
     padding: 20px;
-}
-
-section {
+  }
+  
+  section {
     background-color: #f4f4f4;
     padding: 40px;
     border-radius: 25px;
@@ -32,101 +26,170 @@ section {
     max-width: 800px;
     width: 100%;
     animation: fadeInUp 0.5s ease;
-}
-
-header {
+  }
+  
+  header {
     text-align: center;
     margin-bottom: 20px;
-}
-
-h1 {
+  }
+  
+  h1 {
     font-size: 1em;
     color: #ffa50a;
     margin-bottom: 10px;
-}
-
-p {
+  }
+  
+  p {
     font-size: 16px;
     color: #333;
     line-height: 1.6;
-}
-
-.entry-container {
-    position: relative; 
-    padding: 40px;
-}
+  }
   
-.delete-btn {
-    position: absolute; 
-    top: 20px; 
-    right: 20px; 
-    width: 30px; 
-    height: 30px; 
-    background-color: #a7a7a7; 
+  .entry-container {
+    position: relative;
+    padding: 40px;
+  }
+  
+  .delete-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #a7a7a7;
     color: white;
     border: none;
-    border-radius: 50%; 
-    font-size: 18px; 
+    border-radius: 50%;
+    font-size: 18px;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
+  }
   
-.delete-btn:hover {
-    background-color: #ff0602; 
-}
-
-.edit-btn {
+  .delete-btn:hover {
+    background-color: #ff0602;
+  }
+  
+  /* Shared button styling */
+  .entry-btn {
     padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    height: 50px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .edit-btn {
     background-color: #0d05fc;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
     margin-right: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.edit-btn:hover {
+  }
+  
+  .edit-btn:hover {
     background-color: #251898;
-}
-
-.back-btn {
-    padding: 10px 20px;
+  }
+  
+  .back-btn {
     background-color: #2196F3;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.back-btn:hover {
+    margin-left: 10px;
+  }
+  
+  .back-btn:hover {
     background-color: #03658f;
-}
-/* Animation */
-
-@keyframes fadeInUp {
+  }
+  
+  .email-btn {
+    background-color: #28a745;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .email-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+  
+  .email-btn:active {
+    background-color: #1e7e34;
+    transform: scale(1);
+  }
+  
+  .edit-btn:active,
+  .back-btn:active,
+  .email-btn:active {
+    animation: button-click 0.15s ease;
+  }
+  
+  .email-status {
+    position: absolute;
+    bottom: 70px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #17a2b8;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .email-status.success {
+    background-color: #28a745;
+  }
+  
+  .email-status.error {
+    background-color: #dc3545;
+  }
+  
+  .email-status.show {
+    display: block;
+    opacity: 1;
+  }
+  
+  .email-input {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  @keyframes fadeInUp {
     0% {
-        opacity: 0;
-        transform: translateY(20px);
+      opacity: 0;
+      transform: translateY(20px);
     }
     100% {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
-}
-
-@media (max-width: 768px) {
+  }
+  
+  @media (max-width: 768px) {
     section {
-        padding: 20px;
+      padding: 20px;
     }
-
+  
     h1 {
-        font-size: 1.5em;
+      font-size: 1.5em;
     }
-
+  
     p {
-        font-size: 1em;
+      font-size: 1em;
     }
-}
+  
+    .email-btn {
+      padding: 8px 18px;
+      font-size: 0.9em;
+    }
+  }
+  

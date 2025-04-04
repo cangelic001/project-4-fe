@@ -1,69 +1,80 @@
-# Mentai Log 
+# CodeBrew.edu
 
-Placeholder for screenshot/logo
+## Ideation
+
+Education, to me, is a powerful tool to impart practical skills, ignite curiosity, and shape how someone sees and interacts with the world. Feedback plays a crucial role in that process. It helps students know where they stand and gives teachers insights into how they can better connect with each learner. It is a tool to foster connection, documentation and accountability for both the student and the tutor.
+
+This project was inspired by my experience working at a tuition center, where after every session, we had to manually input reviews and feedback for each student. While the intent was great—helping teachers reflect on their lessons and students grow from consistent feedback. I was inspired by the structure, the sense of accountability, and how feedback was integrated into the learning journey. That experience helped form the vision for this platform—a space where feedback is not just a task, but a meaningful part of the learning loop.
+
+Coupled with my experience attending a coding bootcamp, the idea for the theme of a coding tuition center came about.
+
+The user of the app is currently restricted to the tutors.
 
 ## Description
 
-During the ideation period, we knew that we wanted to incorporate some sort of AI technology into our app. 
-Initially, we wanted to something with visionAI either video or image but we feared that it would take too much time, effort and money hence, we decided to go with something simple like sentiment analysis technology which is quite mature by now. 
+Frontend:
+- Review stats about the number of students one has written entries for, number of entries written.
+- See the number of entries written for each student.
+- Create, update, delete entries written.
+- Filter the entries written by name(s) of the student.
+- Deletion of entry confirmation upon clicking the Delete button.
+- Send an email of the feedback to a specific email the user can enter.
 
-This is a journal app, not quite a mental health app. We thought doing a full mental health app would be too sensitive and risk with mistakes and errors would be too great hence, we decided to go with a simple journal app with sentiment analysis for self monitoring. The name reflects the playful nature of the app with a play on mental health and a popular food item: mentai. 
-
-Essentially, the user logs a written journal everyday. The app analyses the journal for emotions such as joy, sadness etc, sentiment, keywords and entities. These are stored in the database and is presented as a visualisation in the user's dashboard back to the user. This way, the user can monitor their mood and things that are bothering them.
-
-The way we analyse the text is through IBM Watson Natural Language Understanding system. It is a system that uses deep learning to extract meaning and metadata from unstrucuted text data and is one of the earlier models that provided specialised text analysis capabilities before the emergence of modern large language models (LLMs). It was developed to perform targeted natural langauge processing tasks such as extract sentiments, emotions, entities, keywords, categories etc. It represents an early approach to practical AI that focused on solving specific langugage tasks rather than attempting general language understanding. Before the current generation of LLMs, these services represented the state-of-the-art tech. 
-
-Other considerations were cost, reliability in terms of consistent results since we are performing a specific task, structured outputs.
-
-## Project Planning Deliverable
-
-- Project planning link : https://trello.com/b/Z9Le2R5e/project3
+Backend:
+- Accepts a student review (title + text) and recipient email.
+- Sends an email to the recipient with the provided feedback content.
 
 ## Github Repo Deliverables
 
-- Front-end GitHub repo link : https://github.com/cangelic001/react-mentai-log-front-end
-- Back-end GitHub repo link : https://github.com/umeshroka/express-api-mentai-log-back-end
+- Front-end GitHub repo link : https://github.com/cangelic001/project-4-fe
+- Back-end GitHub repo link : https://github.com/cangelic001/project-4-be
 
 ## Deployed App Link Deliverable
 
-- Deployed front-end project link : https://react-mentai-log-front-end.vercel.app
-- Deployed back-end project link : https://express-api-journal-back-end.onrender.com
+- Deployed front-end project link : https://project-4-fe-xi.vercel.app/
+- Deployed back-end project link : https://project-4-be-7xce.onrender.com 
 
 ## Attributions
 
-- IBM Watson Natural Language Understanding: https://www.ibm.com/products/natural-language-understanding
-- React Charts: https://react-chartjs-2.js.org/
+- Mailersend - email sending provider to send review emails
+- React Bootstrap - components library
 
 ## Technologies Used
 
-HTML + CSS + Javascript + React + Node.js + Express
+- Express.js  
+- MongoDB + Mongoose  
+- Mailersend API  
+- dotenv  
+- Postman  
+- Morgan  
+- CORS  
 
-## Stretch Goals
+## Challenges Encountered
 
-Incorporate search in the loglist. Allows the user to look back and search for logs.
-
-We want to have dynamic feedback to the user based on their mood trends using LLM which has been prompted to provide safe, proven and professional advice. Or we can hardcode some feedback.
-
-It would be good if we could give the user an option to do video journalling on top of the text journalling. This way, the user can choose the medium that they are most comfortable with. Video journalling would be superior for us because we could potentially monitor the facial features to extract sentiments because pictures paint a better picture than what people say or write. But this would involve a lot of work because it entails incorporating visionAI as well as speech to text. Not sure if we have the skillset to do this yet. 
+Backend Issues:
+- Third-Party Email Service Confusion: Explored multiple services (Nodemailer, Resend, SendGrid) and faced roadblocks like domain verification. Finally chose Mailsender as I do not need my own domain to send neither do I need to verify it (I can use their test domain) and I can send it to a Gmail account (which is not allowed for other services as Gmail is a free domain). 
 
 ## Reflections
 
-### Favourite Code
+Frontend
+- Ensuring consistent UI and UX across pages buttons was trickier than expected
+- Proper alignment of 
 
-```
-const response = await nlu.analyze({
-      text: text,
-      features: {
-        emotion: { document: true },
-        entities: { limit: 1},
-        keywords: { limit: 1},
-        sentiment: { document: true},
-      },
-    });
+Backend
+- Working with external APIs: Learned to troubleshoot and debug real-world third-party service errors, and adapt quickly by switching providers.
+- Safe JSON Parsing: Improved handling of external API responses with proper JSON parsing fallbacks using response.text() and conditionally calling JSON.parse().
 
-```
+### Stretch Goals
+- Features: 
+  - Rating system with multiple criteria (punctuality, preparedness for lesson, grasp of course material). 
+  - Add parents access to the platform as another possible user type so they can access their child's data on top of getting the email for review.
+  - Analytics tool for the teacher to review the student's progress over time. Student testimonials section.
+  - Scheduling tool for teacher.
+- Email related: Style the email, confirmation and logging about email delivery status to the users.
+- Use different component library.
 
-### Can do better
-
-Maybe at the start when the user is logged in, dont show the charts and dashboard. maybe check if the user has logged today and if not, prompt him to log. then the dashboard is just a link. or maybe show just one line chart in order to not overwhelm the user. then shows the other charts in another dashboard page. 
+### References
+- Mailersend Developer Docs
+- Stack Overflow
+- OpenAI's ChatGPT
 
